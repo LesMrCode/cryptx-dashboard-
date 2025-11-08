@@ -4,18 +4,16 @@ import ChartVisual from "./ChartVisual";
 import TransactionTable from './TransactionTable'; 
 
 function Maincontent() {
-    return(
-
-<section className="space-y-6">
-			<div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-            <MetricCards />
-            <ChartVisual />                
-                </div>
-        
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            <TransactionTable />
-        </div>
-		</section>
+    return (
+        <section className="space-y-8">
+            <div className="grid grid-cols-1 gap-8">
+                <MetricCards />
+                <ChartVisual />
+            </div>
+            <div className="w-full">
+                <TransactionTable />
+            </div>
+        </section>
 
 
     )
