@@ -5,25 +5,23 @@ import './App.css'
 import Sidebar from './components/layout/Sidebar'
 import Header from './components/layout/Header'
 import Maincontent from './components/layout/Maincontent'
+import ErrorBoundary from './components/ErrorBoundary'
 
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <div>
+    <div className="flex">
       <Sidebar />
-
-<div>
-  <Header />
-<main>
-  <Maincontent />
-</main>
-
-</div>
+      <ErrorBoundary>
+        <div className="flex-1">
+          <Header />
+          <main className="p-6">
+            <Maincontent />
+          </main>
+        </div>
+      </ErrorBoundary>
     </div>
-
-  
   )
 }
 
