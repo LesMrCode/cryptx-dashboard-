@@ -1,6 +1,6 @@
 import React, { useState } from 'react'; 
 import { LayoutGrid, ChartPie, WalletIcon, WalletCardsIcon, Mail, Settings, LogOut, WalletCards } from 'lucide-react'; 
-import Logo from "../../assets/logo.png";
+import Logo from "../../assets/Logo.png";
 
 
  function Sidebar() {
@@ -21,7 +21,7 @@ import Logo from "../../assets/logo.png";
         {/* Logo Section */}
         <div className="flex items-center gap-2 px-6 py-8 border-b border-gray-200">
         <img 
-        src={Logo}
+        src={Logo} 
         alt="Cryptx Logo"
         className="w-10 h-auto object-contain"
         />
