@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React from 'react'
 import {
   LineChart,
   Line,
@@ -8,7 +7,8 @@ import {
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
-} from "recharts"
+} from 'recharts'
+
 
 const btcData = [
   { date: "Jan", price: 245 },
@@ -25,22 +25,25 @@ const btcData = [
 ]
 
 function ChartVisual() {
+  
+  
+
   return (
     <div className="bg-white border border-gray-200 rounded-xl shadow-sm p-6">
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-lg font-semibold text-gray-900">BTC Price Chart</h2>
-        <div className="flex items-center gap-2">
-          <span className="text-sm text-gray-500">Last 11 months</span>
-        </div>
+        <span className="text-sm text-gray-500">Last 11 months</span>
       </div>
 
-      {/* ensure the container can shrink in flex layouts and provide an explicit pixel height for Recharts */}
+      {/* this gives the chart a fixed height */}
       <div className="w-full h-[300px] min-w-0">
-        {/* give ResponsiveContainer an explicit height (number) so it can compute sizes reliably */}
-        <ResponsiveContainer width="100%" height={300}>
-          <LineChart data={btcData} margin={{ top: 10, right: 10, bottom: 0, left: 10 }}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" vertical={false} />
-            <XAxis
+     <ResponsiveContainer width="100%" height={300}>
+          <LineChart
+            data={btcData}
+            margin={{ top: 10, right: 10, bottom: 0, left: 10 }}
+          >
+              <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" vertical={false} />
+              <XAxis
               dataKey="date"
               stroke="#94a3b8"
               tick={{ fontSize: 12 }}
@@ -52,22 +55,22 @@ function ChartVisual() {
               tick={{ fontSize: 12 }}
               axisLine={false}
               tickLine={false}
-              tickFormatter={(value) => `$${value}`}
+              tickFormatter={(val) => "$${val}"}
             />
-            <Tooltip
+         <Tooltip
               contentStyle={{
-                backgroundColor: "#1e293b",
-                border: "none",
-                borderRadius: "8px",
+                backgroundColor: '#1e293b',
+                border: 'none',
+                borderRadius: '8px',
                 color: "#fff",
                 fontSize: "12px",
                 padding: "8px 12px",
-                boxShadow: "0 4px 6px -1px rgb(0 0 0 / 0.1)"
+                boxShadow: "0 4px 6px -1px rgb(0 0 0 / 0.1)",
               }}
               cursor={{ stroke: "#3b82f6", strokeWidth: 1 }}
-              formatter={(value) => [`$${value}`, "Price"]}
+              formatter={(val) => ["$${val}", "Price"]}
             />
-            <Line
+         <Line
               type="monotone"
               dataKey="price"
               stroke="#3b82f6"
@@ -82,4 +85,4 @@ function ChartVisual() {
   )
 }
 
-export default ChartVisual;
+export default ChartVisual
